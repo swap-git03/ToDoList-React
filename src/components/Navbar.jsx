@@ -1,35 +1,33 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link, useLocation } from 'react-router-dom'
+
 
 const Navbar = () => {
-  return (
-    <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
-          <Link className="navbar-brand" to="/">ToDo List</Link>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/About">About US</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/createTask">Create Task</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link disabled" aria-disabled="true" to="/disabled">Disabled</Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-  );
-};
+const location = useLocation()
+return (
+<nav className="topbar">
+<div className="topbar-inner container-row">
+<Link to="/" className="brand">
+<span className="logo">✔</span>
+<span className="brand-text">ThoughtTree ToDo</span>
+</Link>
 
-export default Navbar;
+
+<div className="nav-links">
+<Link className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} to="/">
+Home
+</Link>
+<Link className={`nav-link ${location.pathname === '/createTask' ? 'active' : ''}`} to="/createTask">
+Add Task
+</Link>
+<Link className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`} to="/about">
+About
+</Link>
+</div>
+</div>
+</nav>
+)
+}
+
+
+export default Navbar

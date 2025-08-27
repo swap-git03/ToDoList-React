@@ -1,25 +1,26 @@
-import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {BrowserRouter, Route, Routes} from 'react-router-dom' 
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import TodoForm from './components/TodoForm';
-import About from './pages/About';
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import ToDoForm from './components/TodoForm'
+import ToDoList from './components/TodoList'
+import About from './pages/About'
 
-function App() {
 
+const App = () => {
   return (
-    <>
-     < BrowserRouter>
+    <div className="app-root">
       <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />}></Route>
-        <Route path='/createTaskk' element={<TodoForm />}></Route>
-        <Route path='/about' element={<About />}></Route>
-      </Routes>
-     </BrowserRouter>
-    </>
+      <main className="container">
+        <Routes>
+          <Route path="/" element={<ToDoList />} />
+          <Route path="/createTask" element={<ToDoForm />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </main>
+      <footer className="footer">Made with — Simple ToDo</footer>
+    </div>
   )
 }
+
 
 export default App
