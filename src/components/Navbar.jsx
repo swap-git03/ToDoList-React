@@ -9,7 +9,7 @@ return (
 <div className="topbar-inner container-row">
 <Link to="/" className="brand">
 <span className="logo">✔</span>
-<span className="brand-text">ThoughtTree ToDo</span>
+<span className="brand-text">ToDo For SWAPNIL</span>
 </Link>
 
 

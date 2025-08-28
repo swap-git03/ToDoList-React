@@ -11,3 +11,5 @@ const About = () => (
     </p>
   </section>
 );
+
+export default About;
