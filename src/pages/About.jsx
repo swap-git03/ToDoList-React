@@ -1,5 +1,4 @@
-/* eslint-disable react-refresh/only-export-components */
-import React from "react";
+ import React from "react";
 
 const About = () => (
   <section className="about card-shadow">
